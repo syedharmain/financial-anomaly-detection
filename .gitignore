@@ -1,0 +1,8 @@
+# Ignore datasets
+data/
+
+# Ignore large CSV files (optional)
+*.csv
+
+# Ignore models
+models/*.pkl
