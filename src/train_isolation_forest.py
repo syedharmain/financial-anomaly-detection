@@ -1,10 +1,13 @@
 from sklearn.ensemble import IsolationForest
 import joblib
 
-def train_model(X):
-    model = IsolationForest(contamination=0.001, random_state=42)
-    model.fit(X)
-    return model
+def train_isolation_forest(X):
+    model = IsolationForest(
+        n_estimators=100,
+        contamination=0.001,
+        random_state=42
+    )
 
-def save_model(model, path):
-    joblib.dump(model, path)
+    model.fit(X)
+    joblib.dump(model, 'models/isolation_forest.pkl')
+    return model

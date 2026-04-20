@@ -1,4 +1,3 @@
-def split_features_labels(df):
-    X = df.drop('Class', axis=1)
-    y = df['Class']
-    return X, y
+def convert_labels(pred):
+    # Convert -1 (fraud) → 1, and 1 (normal) → 0
+    return [1 if x == -1 else 0 for x in pred]
